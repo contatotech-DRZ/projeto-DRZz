@@ -1,0 +1,414 @@
+css
+/* --- Reset de Margens e Fontes --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Paleta Monocromática (Variáveis) --- */
+:root {
+    --bg-preto-puro: #0a0a0a;
+    --bg-cinza-escuro: #121212;
+    --bg-cinza-card: #1a1a1a;
+    --linha-divisoria: #262626;
+    
+    --texto-branco: #ffffff;
+    --texto-cinza-claro: #ededed;
+    --texto-cinza-medio: #a3a3a3;
+    --texto-mutado: #666666;
+    
+    --transicao-suave: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Estilo do Corpo (Background Geral) --- */
+body {
+    /* Background monocromático misturando cinza escuro e preto */
+    background: linear-gradient(135deg, var(--bg-cinza-escuro) 0%, var(--bg-preto-puro) 100%);
+    color: var(--texto-cinza-claro);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--linha-divisoria);
+}
+
+/* --- Componentes Universais --- */
+.section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--texto-mutado);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--texto-branco);
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+}
+
+/* Botões */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: var(--transicao-suave);
+}
+
+.btn-primary {
+    background-color: var(--texto-branco);
+    color: var(--bg-preto-puro);
+}
+
+.btn-primary:hover {
+    background-color: var(--texto-cinza-medio);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--texto-branco);
+    border: 1px solid var(--linha-divisoria);
+    margin-left: 12px;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--texto-cinza-medio);
+}
+
+/* --- Menu de Navegação --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 24px 0;
+    transition: var(--transicao-suave);
+}
+
+.navbar.sticky {
+    padding: 16px 0;
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--linha-divisoria);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--texto-branco);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--texto-mutado);
+    font-weight: 300;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--texto-cinza-medio);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transicao-suave);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--texto-branco);
+}
+
+/* --- Seção de Início (Hero) --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--linha-divisoria);
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--texto-mutado);
+    margin-bottom: 16px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--texto-branco);
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--texto-cinza-medio);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* --- Área: Sobre Mim --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text p {
+    color: var(--texto-cinza-medio);
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+}
+
+.skills-container h3 {
+    font-size: 1rem;
+    color: var(--texto-branco);
+    margin-bottom: 16px;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills-tags span {
+    background-color: var(--bg-cinza-card);
+    border: 1px solid var(--linha-divisoria);
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    color: var(--texto-cinza-medio);
+    border-radius: 4px;
+}
+
+.profile-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--bg-cinza-card);
+    border: 1px solid var(--linha-divisoria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--texto-mutado);
+    border-radius: 4px;
+}
+
+/* --- Área: Projetos --- */
+.section-header {
+    margin-bottom: 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: rgba(26, 26, 26, 0.5);
+    border: 1px solid var(--linha-divisoria);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: var(--transicao-suave);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: #404040;
+    background-color: var(--bg-cinza-card);
+}
+
+.project-img-wrapper {
+    height: 240px;
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #262626;
+    border-bottom: 1px solid var(--linha-divisoria);
+    transition: var(--transicao-suave);
+}
+
+.project-card:hover .project-img-wrapper {
+    color: var(--texto-cinza-medio);
+}
+
+.project-info {
+    padding: 32px;
+}
+
+.project-category {
+    font-size: 0.8rem;
+    color: var(--texto-mutado);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: var(--texto-branco);
+    margin: 8px 0 16px 0;
+}
+
+.project-info p {
+    color: var(--texto-cinza-medio);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+.project-links {
+    display: flex;
+    gap: 24px;
+}
+
+.link-icon {
+    color: var(--texto-cinza-medio);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transicao-suave);
+}
+
+.link-icon:hover {
+    color: var(--texto-branco);
+}
+
+/* --- Área de Contato & Redes Sociais --- */
+.contact-section {
+    text-align: center;
+}
+
+.contact-card {
+    background-color: var(--bg-cinza-card);
+    border: 1px solid var(--linha-divisoria);
+    padding: 60px 40px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card h2 {
+    font-size: 2.5rem;
+    color: var(--texto-branco);
+    margin-bottom: 16px;
+}
+
+.contact-card p {
+    color: var(--texto-cinza-medio);
+    margin-bottom: 40px;
+}
+
+/* Botões das Redes Sociais (Foco no GitHub) */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.social-links a {
+    color: var(--texto-cinza-medio);
+    font-size: 1.4rem;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--linha-divisoria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: var(--transicao-suave);
+}
+
+/* Destaque especial e elegante ao passar o mouse no GitHub */
+.social-links a:hover {
+    color: var(--texto-branco);
+    border-color: var(--texto-cinza-claro);
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+/* --- Rodapé --- */
+.footer {
+    padding: 40px 0;
+    font-size: 0.85rem;
+    color: var(--texto-mutado);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-to-top a {
+    color: var(--texto-mutado);
+    text-decoration: none;
+    transition: var(--transicao-suave);
+}
+
+.back-to-top a:hover {
+    color: var(--texto-branco);
+}
+
+/* --- Responsividade para Celulares --- */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.6rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
