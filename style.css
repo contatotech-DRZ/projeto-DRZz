@@ -392,23 +392,254 @@ section {
     color: var(--texto-branco);
 }
 
-/* --- Responsividade para Celulares --- */
+Cole **este trecho no FINAL do seu `style.css`**, apagando o bloco antigo de responsividade (`@media max-width: 992px` e `768px`). Ele já está compatível com seu HTML e com o `script.js` atual, mantendo o visual do site igual:
+
+```css
+/* ==========================================
+   MENU MOBILE
+========================================== */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 28px;
+    height: 2px;
+    background: var(--texto-branco);
+    border-radius: 50px;
+    transition: var(--transicao-suave);
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+/* Tablet */
 @media (max-width: 992px) {
+
+    section {
+        padding: 80px 0;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
         gap: 48px;
+        text-align: center;
     }
-}
 
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.6rem;
+    .skills-tags {
+        justify-content: center;
     }
+
+    .profile-frame {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.9rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .contact-card h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 18px 0;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 250px;
+        background: rgba(18, 18, 18, 0.96);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--linha-divisoria);
+        border-radius: 8px;
+        padding: 28px;
+        flex-direction: column;
+        gap: 24px;
+        transition: 0.35s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    /* Hero */
+    .hero-section {
+        min-height: 100vh;
+        height: auto;
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        max-width: 100%;
+        margin: 0 auto 32px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    /* Seções */
+    .section-title {
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .profile-frame {
+        max-width: 300px;
+        margin: auto;
+        font-size: 3rem;
+    }
+
+    /* Projetos */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .project-img-wrapper {
+        height: 180px;
+    }
+
+    .project-info {
+        padding: 24px;
+    }
+
+    .project-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    /* Contato */
+    .contact-card {
+        padding: 40px 24px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    /* Footer */
     .footer-content {
         flex-direction: column;
         gap: 16px;
+        text-align: center;
     }
 }
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .contact-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
