@@ -1,12 +1,21 @@
-// Controle do Menu Mobile (Hambúrguer)
+// --- Controle do Menu Mobile (Hambúrguer) ---
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+
 function abrirModal() {
     document.getElementById('modal-performance').style.display = 'flex';
 }
 
 function fecharModal() {
     document.getElementById('modal-performance').style.display = 'none';
+}
+
+// Fecha o modal ao clicar fora da caixa branca
+window.onclick = function(event) {
+    const modal = document.getElementById('modal-performance');
+    if (event.target === modal) {
+        fecharModal();
+    }
 }
 
 mobileMenu.addEventListener('click', () => {
@@ -22,7 +31,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Efeitos ao rolar a página (Navbar fixa e links ativos)
+// --- Efeitos ao rolar a página (Navbar fixa e links ativos) ---
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const sections = document.querySelectorAll('section, header');
@@ -52,7 +61,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Efeito de Digitação Automática (Typing Effect) focado em Dados e TI
+// --- Efeito de Digitação Automática (Typing Effect) ---
 const words = ["através de Dados.", "com Automação.", "em Infraestrutura TI."];
 let i = 0;
 let timer;
@@ -63,33 +72,14 @@ function typingEffect() {
         if (word.length > 0) {
             document.querySelector('.typing-text').innerHTML += word.shift();
         } else {
-            setTimeout(deletingEffect, 2200); // Tempo que a palavra fica estática na tela
+            setTimeout(deletingEffect, 2200);
             return false;
         }
-        timer = setTimeout(loopTyping, 80); // Velocidade de digitação
+        timer = setTimeout(loopTyping, 80);
     };
     loopTyping();
 }
 
 function deletingEffect() {
     let word = words[i].split("");
-    var loopDeleting = function() {
-        if (word.length > 0) {
-            word.pop();
-            document.querySelector('.typing-text').innerHTML = word.join("");
-        } else {
-            if (words.length > (i + 1)) {
-                i++;
-            } else {
-                i = 0; // Reinicia o loop de palavras
-            }
-            setTimeout(typingEffect, 400);
-            return false;
-        }
-        timer = setTimeout(loopDeleting, 40); // Velocidade de deleção
-    };
-    loopDeleting();
-}
-
-// Inicia o script assim que a página carrega completamente
-document.addEventListener("DOMContentLoaded", typingEffect);
+    var loop
