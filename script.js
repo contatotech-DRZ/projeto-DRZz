@@ -1,6 +1,13 @@
 // Controle do Menu Mobile (Hambúrguer)
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+function abrirModal() {
+    document.getElementById('modal-performance').style.display = 'flex';
+}
+
+function fecharModal() {
+    document.getElementById('modal-performance').style.display = 'none';
+}
 
 mobileMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
