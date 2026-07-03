@@ -84,14 +84,8 @@
                     </div>
                     <div class="project-info">
                         <span class="project-category">Data Analytics</span>
-                        <h3 onclick="abrirModal()" style="cursor: pointer; text-decoration: underline;">Dashboard de Performance Comercial</h3>
+                        <h3 onclick="abrirModal()" style="cursor: pointer; color: var(--primary-color); text-decoration: underline;">Dashboard de Performance Comercial</h3>
                         <p>Análise de dados de vendas feito no Power BI integrando bases SQL, destacando KPIs críticos e previsões de faturamento.</p>
-                        <div class="project-footer">
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="link-icon"><i class="fab fa-github"></i> Repositório</a>
-                                <a href="#" target="_blank" class="link-icon"><i class="fas fa-arrow-up-right-from-square"></i> Ver Relatório</a>
-                            </div>
-                        </div>
                     </div>
                 </article>
 
@@ -103,12 +97,6 @@
                         <span class="project-category">TI & Automação</span>
                         <h3>Script de Monitoramento de Rede</h3>
                         <p>Automação em Python desenvolvida para checar a integridade de servidores locais e enviar alertas automáticos em caso de quedas.</p>
-                        <div class="project-footer">
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="link-icon"><i class="fab fa-github"></i> Repositório</a>
-                                <a href="#" target="_blank" class="link-icon"><i class="fas fa-arrow-up-right-from-square"></i> Documentação</a>
-                            </div>
-                        </div>
                     </div>
                 </article>
             </div>
@@ -140,15 +128,16 @@
             <p>&copy; 2026 Adriano. Todos os direitos reservados.</p>
             <p class="back-to-top"><a href="#home">Voltar ao topo <i class="fas fa-arrow-up"></i></a></p>
         </div>
-        <div id="modal-performance" class="modal-overlay" onclick="fecharModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close-btn" onclick="fecharModal()">&times;</span>
-        <img src="caminho-da-sua-imagem.png" alt="Print Performance Comercial" style="width: 100%; border-radius: 8px;">
-        <h3>Performance Comercial</h3>
-        <p>Este dashboard foi construído utilizando Power BI.</p>
-    </div>
-</div>
     </footer>
+
+    <div id="modal-performance" class="modal-overlay" onclick="fecharModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <img src="caminho-da-sua-imagem.png" alt="Print Performance Comercial" style="width: 100%; border-radius: 8px;">
+            <h3>Performance Comercial</h3>
+            <p>Este dashboard foi construído utilizando Power BI, integrando dados via SQL Server para monitoramento em tempo real.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
