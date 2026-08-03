@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Portfólio | Profissional</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <!-- Cabeçalho / Navegação -->
     <header>
         <nav>
-            <h1>MeuPortfólio</h1>
+            <div class="logo">PORTFÓLIO</div>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#projetos">Projetos</a></li>
@@ -20,66 +20,72 @@
         </nav>
     </header>
 
-    <!-- Seção: Breve Resumo -->
-    <section id="sobre" class="container">
-        <h2>Sobre Mim</h2>
-        <p>Olá! Sou um desenvolvedor apaixonado por criar soluções web modernas e funcionais. Aqui você pode conferir um pouco da minha trajetória e dos trabalhos que já desenvolvi.</p>
-    </section>
+    <main class="main-wrapper">
+        <!-- Seção: Breve Resumo -->
+        <section id="sobre" class="container">
+            <h2>Sobre Mim</h2>
+            <p>Desenvolvedor focado em alta performance, arquitetura de sistemas e soluções web robustas. Especializado em transformar problemas complexos em interfaces limpas, eficientes e de alto impacto visual.</p>
+        </section>
 
-    <!-- Seção: Projetos -->
-    <section id="projetos" class="container">
-        <h2>Meus Projetos</h2>
-        <div class="projetos-grid">
+        <!-- Seção: Projetos -->
+        <section id="projetos" class="container">
+            <h2>Meus Projetos</h2>
+            <div class="projetos-grid">
 
-            <!-- Projeto 1 -->
-            <div class="projeto-card">
-                <h3>Nome do Projeto 1</h3>
-                <p class="resumo">Um aplicativo web incrível construído para resolver X problema.</p>
-                
-                <!-- Texto maior que começa escondido -->
-                <div class="detalhes-projeto">
-                    <p><strong>Detalhes completos:</strong> Este projeto foi desenvolvido utilizando HTML, CSS e JavaScript. O objetivo principal foi otimizar a experiência do usuário, implementando design responsivo e alta performance.</p>
+                <!-- Projeto 1 -->
+                <div class="projeto-card">
+                    <div>
+                        <h3>Plataforma Analytics Core</h3>
+                        <p class="resumo">Dashboard corporativo para rastreamento de métricas e processamento de dados em tempo real.</p>
+                        
+                        <!-- Texto maior que começa escondido -->
+                        <div class="detalhes-projeto">
+                            <p><strong>Detalhes técnicos:</strong> Desenvolvido com arquitetura moderna orientada a componentes. Utiliza processamento assíncrono, autenticação segura via JWT e visualização avançada de dados tabulares e gráficos escaláveis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="botoes-projeto">
+                        <button class="btn-toggle" onclick="toggleProjeto(this)">Ver Mais</button>
+                        <a href="https://github.com/seu-usuario/projeto1" target="_blank" class="btn-link">Acessar Projeto</a>
+                    </div>
                 </div>
 
-                <!-- Botões -->
-                <div class="botoes-projeto">
-                    <button class="btn-toggle" onclick="toggleProjeto(this)">Ver Mais</button>
-                    <a href="https://github.com/seu-usuario/projeto1" target="_blank" class="btn-link">Acessar Projeto</a>
+                <!-- Projeto 2 -->
+                <div class="projeto-card">
+                    <div>
+                        <h3>Enterprise Cloud Storage</h3>
+                        <p class="resumo">Serviço de gerenciamento e armazenamento seguro de arquivos na nuvem.</p>
+                        
+                        <div class="detalhes-projeto">
+                            <p><strong>Detalhes técnicos:</strong> Sistema implementado com criptografia de ponta a ponta, controle de permissões granulares por cargo e interface totalmente adaptada para alta usabilidade em ambientes corporativos críticos.</p>
+                        </div>
+                    </div>
+
+                    <div class="botoes-projeto">
+                        <button class="btn-toggle" onclick="toggleProjeto(this)">Ver Mais</button>
+                        <a href="https://github.com/seu-usuario/projeto2" target="_blank" class="btn-link">Acessar Projeto</a>
+                    </div>
                 </div>
+
             </div>
+        </section>
 
-            <!-- Projeto 2 -->
-            <div class="projeto-card">
-                <h3>Nome do Projeto 2</h3>
-                <p class="resumo">Uma landing page responsiva focada em conversão de vendas.</p>
-                
-                <div class="detalhes-projeto">
-                    <p><strong>Detalhes completos:</strong> Desenvolvido com foco em SEO e acessibilidade. Utilizei técnicas avançadas de estilização para garantir uma navegação fluida em dispositivos móveis e desktops.</p>
-                </div>
-
-                <div class="botoes-projeto">
-                    <button class="btn-toggle" onclick="toggleProjeto(this)">Ver Mais</button>
-                    <a href="https://github.com/seu-usuario/projeto2" target="_blank" class="btn-link">Acessar Projeto</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Seção: Contato -->
-    <section id="contato" class="container">
-        <h2>Contato</h2>
-        <p>Vamos trabalhar juntos ou trocar uma ideia? Entre em contato por:</p>
-        <ul>
-            <li>Email: <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/seu-perfil" target="_blank">linkedin.com/in/seu-perfil</a></li>
-            <li>GitHub: <a href="https://github.com/seu-usuario" target="_blank">github.com/seu-usuario</a></li>
-        </ul>
-    </section>
+        <!-- Seção: Contato -->
+        <section id="contato" class="container">
+            <h2>Contato</h2>
+            <p>Disponível para novos desafios profissionais e parcerias estratégicas. Conecte-se através dos canais abaixo:</p>
+            <ul class="contato-lista">
+                <li><span>Email:</span> <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a></li>
+                <li><span>LinkedIn:</span> <a href="https://linkedin.com/in/seu-perfil" target="_blank">linkedin.com/in/seu-perfil</a></li>
+                <li><span>GitHub:</span> <a href="https://github.com/seu-usuario" target="_blank">github.com/seu-usuario</a></li>
+            </ul>
+        </section>
+    </main>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 - Desenvolvido por Você.</p>
+        <p>&copy; 2026 — Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
