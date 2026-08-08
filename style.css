@@ -2,220 +2,223 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
-    /* Fundo com gradiente sutil em tons de cinza escuro / preto */
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #111111 100%);
-    color: #e0e0e0;
-    line-height: 1.7;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-color: black;
+    height: 100vh;
+    /* Fonte Sekuya no site todo */
+    font-family: "Sekuya", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
-header {
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #222;
-    padding: 1.2rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
+.interface {
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo {
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-nav ul {
+.flex {
     display: flex;
-    list-style: none;
-    gap: 30px;
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Espaça o texto e a imagem */
 }
 
-nav ul li a {
-    color: #aaa;
+/* Estilo do menu area */
+header {
+    padding: 40px 4%;
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: white;
     text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #fff;
+header a:hover {
+    color: #7307ff;
+    transform: scale(1.05);
+    display: inline-block;
 }
 
-.main-wrapper {
-    flex: 1;
-    max-width: 900px;
-    width: 100%;
-    margin: 120px auto 60px auto;
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
     padding: 0 20px;
 }
 
-.container {
-    background: rgba(20, 20, 20, 0.7);
-    border: 1px solid #2a2a2a;
-    border-radius: 4px;
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-}
-
-section h2 {
-    margin-bottom: 20px;
-    color: #fff;
-    font-size: 1.5rem;
+header .adr-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
+    background-color: white;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-.container p {
-    color: #b0b0b0;
-    font-size: 1rem;
+header .adr-contato button:hover {
+    color: #7307ff;
 }
 
-.projetos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 25px;
+/* Classe exclusiva para a fonte do botão */
+.fonte-botao {
+    font-family: "Bitcount Prop Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0,
+        "CRSV" 0.5,
+        "ELSH" 0,
+        "ELXP" 0;
 }
 
-.projeto-card {
-    background: rgba(15, 15, 15, 0.8);
-    border: 1px solid #282828;
-    border-radius: 4px;
-    padding: 25px;
+/* Bloco do centro (Topo do site) */
+section.topo-do-site {
+    padding: 40px 4%;
+    color: white; /* Garante que os textos dentro do topo fiquem visíveis no fundo preto */
+}
+
+/* Estilos internos do topo do site para organizar texto e imagem */
+section.topo-do-site .txt-topo-site {
+    width: 50%; /* Ocupa metade da largura */
+}
+
+section.topo-do-site .txt-topo-site h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+section.topo-do-site .txt-topo-site h1 span {
+    color: #7307ff; /* Destaca a palavra 'RESULTADO' com sua cor roxa */
+}
+
+section.topo-do-site .txt-topo-site p {
+    font-family: sans-serif; /* Fonte legível para parágrafos longos, se preferir trocar depois */
+    color: #ccc;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+section.topo-do-site .img-topo-site {
+    width: 40%; /* Ocupa a outra metade */
+}
+
+section.topo-do-site .img-topo-site img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Botão do topo */
+section.topo-do-site .drz-contato button {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #7307ff;
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+section.topo-do-site .drz-contato button:hover {
+    background-color: white;
+    color: #7307ff;
+}
+
+/* Fonte texto do meio */
+.fonte-texto-meio {
+    font-family: "Bitcount Prop Single", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* section especialidades / projetos */
+section.especialidades {
+    padding: 40px 4%;
+}
+
+/* Título centralizado dos projetos com a mesma fonte e cor roxa */
+h2.titulo-secao {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    width: 100%;
+    margin: 50px 0 30px 0;
+}
+
+h2.titulo-secao span {
+    color: #7307ff;
+}
+
+/* Organiza os projetos lado a lado e centralizados */
+.flex-projetos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Garante que os links ocupem o mesmo espaço exato */
+.card-projeto-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 350px; /* Largura fixa igual para os dois */
+}
+
+/* Estilo do botão/card grande com tamanho fixo idêntico */
+.div-especialidades-box {
+    background-color: #121212;
+    border: 1px solid #333;
+    padding: 35px;
+    border-radius: 15px;
+    width: 100%; /* Ocupa todo o espaço do link (350px) */
+    height: 240px; /* Altura fixa idêntica para não ficarem desalinhados */
+    text-align: center;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: border-color 0.3s ease, transform 0.2s ease;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.projeto-card:hover {
-    border-color: #555;
+/* Efeito ao passar o mouse: cresce 1.07 e ganha destaque */
+.div-especialidades-box:hover {
+    transform: scale(1.07);
+    border-color: #7307ff;
+    box-shadow: 0 10px 25px rgba(115, 7, 255, 0.3);
 }
 
-.projeto-card h3 {
-    color: #fff;
-    font-size: 1.2rem;
+/* Estilização interna dos cards de projeto */
+.div-especialidades-box i {
+    font-size: 45px;
+    color: #7307ff;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.div-especialidades-box h3 {
+    font-size: 18px;
     margin-bottom: 10px;
-    font-weight: 500;
+    color: white;
 }
 
-.projeto-card .resumo {
-    color: #999;
-    font-size: 0.95rem;
-}
-
-/* Oculta os detalhes por padrão */
-.detalhes-projeto {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin 0.4s ease;
-    font-size: 0.9rem;
-    color: #b5b5b5;
-}
-
-/* Classe aplicada via JavaScript para mostrar o texto */
-.detalhes-projeto.ativo {
-    max-height: 250px;
-    margin-top: 20px;
-}
-
-.botoes-projeto {
-    display: flex;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-button, .btn-link {
-    padding: 10px 18px;
-    border-radius: 2px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.btn-toggle {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #444;
-}
-
-.btn-toggle:hover {
-    background-color: #fff;
-    color: #000;
-    border-color: #fff;
-}
-
-.btn-link {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #fff;
-}
-
-.btn-link:hover {
-    background-color: #d1d1d1;
-    border-color: #d1d1d1;
-}
-
-.contato-lista {
-    list-style: none;
-    margin-top: 15px;
-}
-
-.contato-lista li {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-.contato-lista span {
-    color: #fff;
-    font-weight: 500;
-    margin-right: 8px;
-}
-
-.contato-lista a {
+.div-especialidades-box p {
+    font-family: sans-serif;
+    font-size: 14px;
     color: #aaa;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contato-lista a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #666;
-    font-size: 0.85rem;
-    border-top: 1px solid #1a1a1a;
-    background: #080808;
 }
