@@ -222,3 +222,45 @@ h2.titulo-secao span {
     font-size: 14px;
     color: #aaa;
 }
+/* Responsividade para Celulares (Telas menores que 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* Ajusta o padding geral do site para não colar nas bordas */
+    section.topo-do-site, header {
+        padding: 20px 4%;
+    }
+
+    /* Oculta o menu desktop temporariamente ou ajusta ele (se preferir) */
+    header .menu-desktop {
+        display: none; 
+    }
+
+    /* Faz o texto principal ocupar 100% da largura em cima */
+    section.topo-do-site .txt-topo-site {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Diminui o tamanho do título principal para caber no celular */
+    section.topo-do-site .txt-topo-site h1 {
+        font-size: 28px;
+    }
+
+    /* Centraliza o botão de contato do topo */
+    section.topo-do-site .drz-contato {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Deixa os botões/cards de projetos com largura total adaptada e um abaixo do outro */
+    .card-projeto-link {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Reduz o tamanho do título "MEUS PROJETOS" */
+    h2.titulo-secao {
+        font-size: 26px;
+        margin: 30px 0 20px 0;
+    }
+}
