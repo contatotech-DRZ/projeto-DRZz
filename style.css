@@ -6,7 +6,6 @@
 
 body {
     background-color: black;
-    height: 100vh;
     /* Fonte Sekuya no site todo */
     font-family: "Sekuya", system-ui;
     font-weight: 400;
@@ -20,8 +19,8 @@ body {
 
 .flex {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    justify-content: space-between; /* Espaça o texto e a imagem */
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Estilo do menu area */
@@ -85,12 +84,11 @@ header .adr-contato button:hover {
 /* Bloco do centro (Topo do site) */
 section.topo-do-site {
     padding: 40px 4%;
-    color: white; /* Garante que os textos dentro do topo fiquem visíveis no fundo preto */
+    color: white;
 }
 
-/* Estilos internos do topo do site para organizar texto e imagem */
 section.topo-do-site .txt-topo-site {
-    width: 50%; /* Ocupa metade da largura */
+    width: 50%;
 }
 
 section.topo-do-site .txt-topo-site h1 {
@@ -100,23 +98,14 @@ section.topo-do-site .txt-topo-site h1 {
 }
 
 section.topo-do-site .txt-topo-site h1 span {
-    color: #7307ff; /* Destaca a palavra 'RESULTADO' com sua cor roxa */
+    color: #7307ff;
 }
 
 section.topo-do-site .txt-topo-site p {
-    font-family: sans-serif; /* Fonte legível para parágrafos longos, se preferir trocar depois */
+    font-family: sans-serif;
     color: #ccc;
     margin-bottom: 30px;
     line-height: 1.5;
-}
-
-section.topo-do-site .img-topo-site {
-    width: 40%; /* Ocupa a outra metade */
-}
-
-section.topo-do-site .img-topo-site img {
-    width: 100%;
-    max-width: 100%;
 }
 
 /* Botão do topo */
@@ -145,12 +134,7 @@ section.topo-do-site .drz-contato button:hover {
     font-style: normal;
 }
 
-/* section especialidades / projetos */
-section.especialidades {
-    padding: 40px 4%;
-}
-
-/* Título centralizado dos projetos com a mesma fonte e cor roxa */
+/* Título centralizado dos projetos */
 h2.titulo-secao {
     color: white;
     font-size: 35px;
@@ -176,7 +160,7 @@ h2.titulo-secao span {
     text-decoration: none;
     color: inherit;
     display: block;
-    width: 350px; /* Largura fixa igual para os dois */
+    width: 350px;
 }
 
 /* Estilo do botão/card grande com tamanho fixo idêntico */
@@ -185,8 +169,8 @@ h2.titulo-secao span {
     border: 1px solid #333;
     padding: 35px;
     border-radius: 15px;
-    width: 100%; /* Ocupa todo o espaço do link (350px) */
-    height: 240px; /* Altura fixa idêntica para não ficarem desalinhados */
+    width: 100%;
+    height: 240px;
     text-align: center;
     cursor: pointer;
     display: flex;
@@ -203,7 +187,6 @@ h2.titulo-secao span {
     box-shadow: 0 10px 25px rgba(115, 7, 255, 0.3);
 }
 
-/* Estilização interna dos cards de projeto */
 .div-especialidades-box i {
     font-size: 45px;
     color: #7307ff;
@@ -222,43 +205,109 @@ h2.titulo-secao span {
     font-size: 14px;
     color: #aaa;
 }
-/* Responsividade para Celulares (Telas menores que 768px) */
+
+/* Esconde o menu mobile no desktop */
+.btn-abrir-menu, .menu-mobile {
+    display: none;
+}
+
+/* =========================================
+   RESPONSIVIDADE (CELULARES E TABLETS)
+========================================= */
 @media screen and (max-width: 768px) {
     
-    /* Ajusta o padding geral do site para não colar nas bordas */
-    section.topo-do-site, header {
+    header .menu-desktop,
+    header .adr-contato {
+        display: none;
+    }
+
+    .btn-abrir-menu {
+        display: block;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .menu-mobile {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #121212;
+        z-index: 99999;
+        padding: 40px;
+        transition: 0.4s ease-in-out;
+        display: block;
+        border-left: 1px solid #333;
+    }
+
+    .menu-mobile.abrir-menu {
+        right: 0;
+    }
+
+    .menu-mobile .btn-fechar {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 30px;
+    }
+
+    .menu-mobile nav ul {
+        list-style: none;
+    }
+
+    .menu-mobile nav ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 15px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .menu-mobile nav ul li a:hover {
+        color: #7307ff;
+    }
+
+    .overlay-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 99998;
+        display: none;
+    }
+
+    .overlay-menu.abrir-menu {
+        display: block;
+    }
+
+    section.topo-do-site {
         padding: 20px 4%;
     }
 
-    /* Oculta o menu desktop temporariamente ou ajusta ele (se preferir) */
-    header .menu-desktop {
-        display: none; 
-    }
-
-    /* Faz o texto principal ocupar 100% da largura em cima */
     section.topo-do-site .txt-topo-site {
         width: 100%;
         text-align: center;
     }
 
-    /* Diminui o tamanho do título principal para caber no celular */
     section.topo-do-site .txt-topo-site h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
-    /* Centraliza o botão de contato do topo */
     section.topo-do-site .drz-contato {
         display: flex;
         justify-content: center;
     }
 
-    /* Deixa os botões/cards de projetos com largura total adaptada e um abaixo do outro */
     .card-projeto-link {
         width: 100%;
         max-width: 320px;
     }
 
-    /* Reduz o tamanho do título "MEUS PROJETOS" */
     h2.titulo-secao {
         font-size: 26px;
         margin: 30px 0 20px 0;
