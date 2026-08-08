@@ -23,12 +23,13 @@
         <div class="interface">
             <div class="logo"></div><!--Logo-->
             
+            <!-- Menu Desktop -->
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Especialidades</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
                 </ul>
             </nav>
             
@@ -37,11 +38,34 @@
                     <button class="fonte-botao">Contato</button>
                 </a>
             </div>
+
+            <!-- Ícone do Menu Hambúrguer para Celular -->
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <!-- Menu Lateral que abre no Celular -->
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg" id="btn-fechar"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                    </ul>
+                </nav>
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+
         </div><!--interface-->
     </header>
 
     <main>
-        <section class="topo-do-site">
+        <!-- Início do site -->
+        <section class="topo-do-site" id="inicio">
             <div class="interface">
                 <div class="flex">
                     <!-- Texto principal -->
@@ -57,13 +81,16 @@
                     </div><!--txt-topo-site-->
                 </div><!--flex-->
 
-                <!-- Seção de Projetos em baixo -->
-                <div class="container-projetos">
+                <!-- Seção de Especialidades (ID reservado para o menu) -->
+                <div id="especialidades"></div>
+
+                <!-- Seção de Projetos -->
+                <div class="container-projetos" id="projetos">
                     <h2 class="titulo-secao fonte-texto-meio">MEUS <span>PROJETOS</span>.</h2>
                     <div class="flex-projetos">
                         
                         <!-- Projeto 1: Coruja da Física -->
-                        <a href="https://contatotech-drz.github.io/corujadafisica/" target="_blank" class="card-projeto-link">
+                        <a href="https://github.com/contatotech-DRZ/corujadafisica" target="_blank" class="card-projeto-link">
                             <div class="div-especialidades-box">
                                 <i class="bi bi-filetype-html"></i>
                                 <h3 class="fonte-texto-meio">Coruja da Fisica</h3>
@@ -83,9 +110,34 @@
                     </div><!--flex-projetos-->
                 </div><!--container-projetos-->
 
+                <!-- Seção Sobre (ID reservado para o menu) -->
+                <div id="sobre"></div>
+
             </div><!--interface-->
         </section><!--topo do site-->
     </main>
 
+    <!-- Script JavaScript do Menu -->
+    <script>
+        let btnMenu = document.getElementById('btn-menu')
+        let menu = document.getElementById('menu-mobile')
+        let overlay = document.getElementById('overlay-menu')
+        let btnFechar = document.getElementById('btn-fechar')
+
+        btnMenu.addEventListener('click', ()=>{
+            menu.classList.add('abrir-menu')
+            overlay.classList.add('abrir-menu')
+        })
+
+        menu.addEventListener('click', ()=>{
+            menu.classList.remove('abrir-menu')
+            overlay.classList.remove('abrir-menu')
+        })
+
+        overlay.addEventListener('click', ()=>{
+            menu.classList.remove('abrir-menu')
+            overlay.classList.remove('abrir-menu')
+        })
+    </script>
 </body>
 </html>
