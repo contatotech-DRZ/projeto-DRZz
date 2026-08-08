@@ -1,93 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Profissional</title>
+    
+    <title>Adriano Aquino</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Seu CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
     <header>
-        <nav>
-            <div class="logo">ADRIANO AQUINO</div>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="interface">
+            <div class="logo"></div><!--Logo-->
+            
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Especialidades</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Projetos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="adr-contato">
+                <a href="#">
+                    <button class="fonte-botao">Contato</button>
+                </a>
+            </div>
+        </div><!--interface-->
     </header>
 
-    <main class="main-wrapper">
-        <!-- Seção: Breve Resumo -->
-        <section id="sobre" class="container">
-            <h2>Sobre Mim</h2>
-            <p>Desenvolvedor focado em alta performance, arquitetura de sistemas e soluções web robustas. Especializado em transformar problemas complexos em interfaces limpas, eficientes e de alto impacto visual.</p>
-        </section>
-
-        <!-- Seção: Projetos -->
-        <section id="projetos" class="container">
-            <h2>Meus Projetos</h2>
-            <div class="projetos-grid">
-
-                <!-- Projeto 1 -->
-                <div class="projeto-card">
-                    <div>
-                        <h3>Dashboard de Monitoramento de hardware</h3>
-                        <p class="resumo">Dashboard Dashboard de monitoramento de hardware executavel diretamente do seu computador.</p>
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <!-- Texto principal -->
+                    <div class="txt-topo-site">
+                        <h1 class="fonte-texto-meio">FAZENDO SUAS IDEIAS VIRAREM <span>RESULTADO</span>.</h1>
+                        <p>Com um olhar atento aos detalhes e foco em resultados de alto impacto, transformo conceitos criativos em projetos digitais funcionais, modernos e memoráveis. Aqui, sua visão ganha forma e direção exata para se destacar no mercado e conectar você ao seu público.</p>
                         
-                        <!-- Texto maior que começa escondido -->
-                        <div class="detalhes-projeto">
-                            <p><strong>Detalhes técnicos:</strong> Ao Executar utilizando o terminal,ocorre um monitoramento tecnico em tempo real do seu hardware.</p>
+                        <div class="drz-contato">
+                            <a href="#">
+                                <button class="fonte-botao">Entre em contato</button>
+                            </a>
                         </div>
-                    </div>
+                    </div><!--txt-topo-site-->
+                </div><!--flex-->
 
-                    <!-- Botões -->
-                    <div class="botoes-projeto">
-                        <button class="btn-toggle" onclick="toggleProjeto(this)">Ver Mais</button>
-                        <a href="https://github.com/contatotech-DRZ/sistema-checking" target="_blank" class="btn-link">Acessar Projeto</a>
-                    </div>
-                </div>
-
-                <!-- Projeto 2 -->
-                <div class="projeto-card">
-                    <div>
-                        <h3>Coruja da Fisica</h3>
-                        <p class="resumo">Autorizado pelo cliente, este é um pequeno jogo de fisica através de landing-pages com calculos simples cujo objetivo é o estudo em fisica.</p>
+                <!-- Seção de Projetos em baixo -->
+                <div class="container-projetos">
+                    <h2 class="titulo-secao fonte-texto-meio">MEUS <span>PROJETOS</span>.</h2>
+                    <div class="flex-projetos">
                         
-                        <div class="detalhes-projeto">
-                            <p><strong>Detalhes técnicos:</strong> lading-page implementada com html,css e java-script simples.</p>
-                        </div>
-                    </div>
+                        <!-- Projeto 1: Coruja da Física -->
+                        <a href="https://contatotech-drz.github.io/corujadafisica/" target="_blank" class="card-projeto-link">
+                            <div class="div-especialidades-box">
+                                <i class="bi bi-filetype-html"></i>
+                                <h3 class="fonte-texto-meio">Coruja da Fisica</h3>
+                                <p>Projeto de joguinho de fisica simples</p>
+                            </div>
+                        </a>
 
-                    <div class="botoes-projeto">
-                        <button class="btn-toggle" onclick="toggleProjeto(this)">Ver Mais</button>
-                        <a href="https://contatotech-drz.github.io/corujadafisica/" target="_blank" class="btn-link">Acessar Projeto</a>
-                    </div>
-                </div>
+                        <!-- Projeto 2: Dashboard de Monitoramento -->
+                        <a href="https://github.com/contatotech-DRZ/sistema-checking" target="_blank" class="card-projeto-link">
+                            <div class="div-especialidades-box">
+                                <i class="bi bi-display"></i>
+                                <h3 class="fonte-texto-meio">Dashboard de Monitoramento</h3>
+                                <p>Dashboard de monitoramento de hardware</p>
+                            </div>
+                        </a> 
 
-            </div>
-        </section>
+                    </div><!--flex-projetos-->
+                </div><!--container-projetos-->
 
-        <!-- Seção: Contato -->
-        <section id="contato" class="container">
-            <h2>Contato</h2>
-            <p>Disponível para novos desafios profissionais e parcerias estratégicas. Conecte-se através dos canais abaixo:</p>
-            <ul class="contato-lista">
-                <li><span>Email:</span> <a href="adrianoaquino.tecnico@gmail.com">CLIQUE AQUI</a></li>
-                <li><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/adriano-pereira-aquino/" target="_blank">CLIQUE AQUI</a></li>
-                <li><span>GitHub:</span> <a href="https://github.com/contatotech-DRZ" target="_blank">CLIQUE AQUI</a></li>
-            </ul>
-        </section>
+            </div><!--interface-->
+        </section><!--topo do site-->
     </main>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 — Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
