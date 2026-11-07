@@ -1,4 +1,4 @@
-* {
+- {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -88,7 +88,7 @@ section.topo-do-site {
 }
 
 section.topo-do-site .txt-topo-site {
-    width: 50%;
+    width: 100%;
 }
 
 section.topo-do-site .txt-topo-site h1 {
@@ -212,7 +212,7 @@ h2.titulo-secao span {
 }
 
 /* =========================================
-   RESPONSIVIDADE (CELULARES E TABLETS)
+    RESPONSIVIDADE (CELULARES E TABLETS)
 ========================================= */
 @media screen and (max-width: 768px) {
     
